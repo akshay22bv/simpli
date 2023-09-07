@@ -1,4 +1,3 @@
-"use client";
 import SidebarProvider from "@/context/SidebarContext";
 // import Sidebar from "../common/Sidebar";
 // import TopBar from "../common/TopBar";
