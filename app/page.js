@@ -14,8 +14,13 @@ import { CiEdit } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
+import sample1 from "../assets/sample/sample1.jpg";
+import { NewUserContext } from "@/context/UserProvider";
+
 const page = () => {
   const [slice, setSlice] = useState(2);
+
+  const { newUser } = useContext(NewUserContext);
 
   const loadmore = () => {
     if (installationdata.length > slice) {
@@ -180,12 +185,12 @@ const page = () => {
             <p className="text-[#514EF3] text-xs">View All</p>
           </div>
 
-          {customers.map((item, i) => {
+          {newUser.map((item, i) => {
             return (
               <div key={i} className="flex items-center py-2">
                 <Image
                   className="h-8 w-8  object-cover rounded-full"
-                  src={item.image}
+                  src={item.image ? item.image : sample1}
                   alt=""
                 ></Image>
 

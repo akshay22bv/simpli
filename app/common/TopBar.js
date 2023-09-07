@@ -9,12 +9,15 @@ import { sideBarContext } from "@/context/SidebarContext";
 import { usePathname } from "next/navigation";
 import { Dialog, DialogContent, DialogTitle } from "@mui/material";
 import { NewDealsContext } from "@/context/NewDealsProvider";
+import { NewUserContext } from "@/context/UserProvider";
 
 const TopBar = () => {
   const pathName = usePathname();
   const { open, handleOpenSidebar } = useContext(sideBarContext);
   const { newdeals, setNewDeals, newArray } = useContext(NewDealsContext);
   const [dilogOpen, setDailogOpen] = useState(false);
+  const { newUser, newUserChange } = useContext(NewUserContext);
+
   const [form, setForm] = useState({
     name: "",
     price: "",
@@ -47,20 +50,19 @@ const TopBar = () => {
 
     array.push(form);
 
-    console.log({ array });
     newArray(array);
 
     setDailogOpen(!dilogOpen);
   };
 
-  const handleSubmitUser = () => {
+  const handleSubmitUser = (e) => {
     e.preventDefault();
 
     let array = [];
 
-    array.push(form);
+    array.push(userForm);
 
-    newArray(array);
+    newUserChange(array);
 
     setDailogOpen(!dilogOpen);
   };
