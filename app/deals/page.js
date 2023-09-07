@@ -6,7 +6,7 @@ import { BsImageAlt } from "react-icons/bs";
 import { NewDealsContext } from "@/context/NewDealsProvider";
 import sample1 from "../../assets/sample/sample1.jpg";
 
-const page = () => {
+const Deals = () => {
   const [slice, setSlice] = useState(7);
 
   const { newdeals } = useContext(NewDealsContext);
@@ -83,4 +83,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Deals;

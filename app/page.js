@@ -17,7 +17,7 @@ import { BsArrowRight } from "react-icons/bs";
 import sample1 from "../assets/sample/sample1.jpg";
 import { NewUserContext } from "@/context/UserProvider";
 
-const page = () => {
+const Dashboard = () => {
   const [slice, setSlice] = useState(2);
 
   const { newUser } = useContext(NewUserContext);
@@ -245,4 +245,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Dashboard;
